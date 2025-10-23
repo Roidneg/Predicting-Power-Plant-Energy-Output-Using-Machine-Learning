@@ -30,3 +30,27 @@ AT	Temperature (°C)
 V	Exhaust Vacuum (cm Hg)
 AP	Ambient Pressure (mbar)
 RH	Relative Humidity (%)
+Target output:
+PE — Net hourly energy output (MW)
+
+Methodology
+Step	Description
+Data Inspection	Confirmed clean and complete dataset (9,568 rows)
+Feature/Target Split: All four environmental variables used as inputs
+Train/Test Split	80% training / 20% test
+Baseline Model	Linear Regression
+Final Model	Random Forest Regressor (improved performance)
+Evaluation Metric	RMSE — Root Mean Squared Error
+
+Model Performance
+Model	RMSE (MW)	Improvement
+Linear Regression	4.503	Baseline
+Random Forest	3.231	✅ ~29% increase in prediction accuracy
+
+Key Insights
+
+Temperature (AT) and Exhaust Vacuum (V) are the largest drivers of output variability
+
+The plant’s efficiency decreases as temperature and vacuum increase
+
+Tree-based models more effectively capture nonlinear energy-production behavior
